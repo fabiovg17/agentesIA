@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel de Control</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">MiPanel</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-item active" data-section="dashboard">
+          <span class="nav-icon">🏠</span> Dashboard
+        </a>
+        <a href="#" class="nav-item" data-section="usuarios">
+          <span class="nav-icon">👥</span> Usuarios
+        </a>
+        <a href="#" class="nav-item" data-section="reportes">
+          <span class="nav-icon">📊</span> Reportes
+        </a>
+        <a href="#" class="nav-item" data-section="configuracion">
+          <span class="nav-icon">⚙️</span> Configuración
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main content -->
+    <div class="main">
+
+      <!-- Header -->
+      <header class="topbar">
+        <h1 class="page-title" id="page-title">Dashboard</h1>
+        <div class="topbar-actions">
+          <input type="text" class="search-input" placeholder="Buscar..." />
+          <div class="avatar">FB</div>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <main class="content">
+
+        <!-- Metric cards -->
+        <div class="cards-grid">
+          <div class="metric-card">
+            <span class="metric-label">Usuarios activos</span>
+            <span class="metric-value" id="usuarios-count">1,284</span>
+            <span class="metric-trend positive">▲ 12% este mes</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">Ingresos</span>
+            <span class="metric-value" id="ingresos-count">$48,320</span>
+            <span class="metric-trend positive">▲ 8% este mes</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">Tareas pendientes</span>
+            <span class="metric-value" id="tareas-count">37</span>
+            <span class="metric-trend negative">▼ 3 nuevas hoy</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">Uptime del sistema</span>
+            <span class="metric-value">99.9%</span>
+            <span class="metric-trend neutral">Sin incidentes</span>
+          </div>
+        </div>
+
+        <!-- Table + chart row -->
+        <div class="row">
+
+          <!-- Recent activity table -->
+          <div class="card table-card">
+            <div class="card-header">
+              <h2>Actividad reciente</h2>
+              <button class="btn-secondary" id="btn-refresh">↻ Actualizar</button>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Usuario</th>
+                  <th>Acción</th>
+                  <th>Hora</th>
+                  <th>Estado</th>
+                </tr>
+              </thead>
+              <tbody id="activity-table">
+                <tr>
+                  <td>Ana López</td>
+                  <td>Subió archivo</td>
+                  <td>10:32 AM</td>
+                  <td><span class="badge success">Completado</span></td>
+                </tr>
+                <tr>
+                  <td>Carlos Mora</td>
+                  <td>Editó perfil</td>
+                  <td>10:18 AM</td>
+                  <td><span class="badge success">Completado</span></td>
+                </tr>
+                <tr>
+                  <td>María García</td>
+                  <td>Inició sesión</td>
+                  <td>09:55 AM</td>
+                  <td><span class="badge warning">Pendiente</span></td>
+                </tr>
+                <tr>
+                  <td>Luis Vargas</td>
+                  <td>Generó reporte</td>
+                  <td>09:30 AM</td>
+                  <td><span class="badge danger">Error</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Mini bar chart -->
+          <div class="card chart-card">
+            <div class="card-header">
+              <h2>Visitas por día</h2>
+            </div>
+            <div class="bar-chart" id="bar-chart">
+              <!-- bars injected by JS -->
+            </div>
+            <div class="bar-labels" id="bar-labels"></div>
+          </div>
+
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
