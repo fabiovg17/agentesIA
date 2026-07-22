@@ -247,10 +247,6 @@ function renderChart() {
   });
 }
 
-
-// Renderiza los botones de redes sociales
-renderSocialButtons();
-
 // =============================================
 // INIT
 // =============================================
